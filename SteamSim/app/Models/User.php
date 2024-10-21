@@ -57,4 +57,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    public function games()
+    {
+        return $this->belongsToMany(Game::class, 'purchases');
+    }
 }
